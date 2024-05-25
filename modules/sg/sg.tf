@@ -1,5 +1,5 @@
 resource "aws_security_group" "web" {
-  name        = "${var.env}-web"
+  name        = "web"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
 
@@ -25,16 +25,3 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 
 
 
-# How to Reference to Resource?
-# In order to Reference to Resource, we use labels (first and second)
-#syntax is first_label.second_label.attribute
-# vpc_security_group_ids - when you see plural "s" it expects list, thus, we need square brackets
-# when you use hard coding you use double quotation
-# dynamic references doesnt use double quotations
-# protocols : icp, udp , slp
-
-#How to Reference to Input Variable?
-# Syntax: var.vraiable_name
-# Terraform Version:
-#0.0.0 - 0.11.9 = ${aws_security_group.web.id}, ${var.env}
-#0.12.0 - 1.8.5 = aws_security_group.web.id, var.env
