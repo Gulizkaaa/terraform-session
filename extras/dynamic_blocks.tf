@@ -41,6 +41,6 @@ variable "ports" {
 
 
 
-# map is key = value
-# object is multiple data 
+# map is the set of multiple key = value
+# object is multiple data = object is a set of multiple maps 
 # array is list of object 
